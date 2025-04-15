@@ -1,0 +1,52 @@
+{% extends 'main/main.html' %}
+{% block style %}
+<style>
+
+    body{
+        background-color:darkslategray;
+    }
+    h2{
+        font-weight: 600;
+        color:white;
+        padding: 30px 40px;
+        text-align: center;
+    }
+
+    .card{
+        display: flex;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 15px;
+    }
+    
+    h5{
+        font-weight: bold;
+    }
+    
+    .info-box {
+    background-color: darkgray; /* Slight transparent white */
+    color: black;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+    
+</style>
+{% endblock %}
+{% block content %}
+    <h2>My Bookings</h2>
+    {% for booking in bookings %}
+    <div class="page-wrapper">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>{{ booking.car.make }} {{ booking.car.model }}</h5>
+                <p class="info-box"><strong>From:</strong> {{ booking.start_time }}</p>
+                <p class="info-box"><strong>To:</strong> {{ booking.end_time }}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p>You have no bookings yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

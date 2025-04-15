@@ -1,0 +1,186 @@
+{% extends 'main/main.html' %}
+{% block title %}Rent SUVs{% endblock %}
+{% block style %}
+<style>
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),center center/cover no-repeat;
+  color: white;
+  padding: 60px 0;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.hero-section h3{
+  font-size: 2.5rem;
+  font-weight: 500 ;
+}
+.hero-section p {
+  font-size: 1.25rem;
+  margin-top: 5px;
+}
+.card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+    .card-title {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    .btn-success {
+        background-color: black;
+        border: none;
+    }
+
+    .btn-success:hover {
+        background-color: black;
+    }
+
+    .car-category-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 4px 12px white;
+    transition: transform 0.3s ease;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 25px 20px;
+    justify-content:space-between;
+}
+
+
+
+.btn-primary{
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    border:none;
+}
+
+.btn-primary:hover{
+    background-color: black;
+}
+
+
+.car-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.car-category-card p {
+    font-size: 0.95rem;
+    color: black;
+    flex-grow: 1;
+}
+.view-btn{
+    width: 100vh;
+    background-color: black;
+    border: none;
+    padding:10px;
+    color:white;
+    border-radius:5px;
+    text-decoration:none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.view-btn:hover{
+    background-color: black;
+}
+
+    footer {
+        background-color: #10182F;
+        padding: 20px 0;
+        text-align: center;
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 60px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<section class="hero-section text-center">
+  <div class="container">
+      <h3>Rent SUVs</h3>
+      <h5>Rent an SUV for Your Next Adventure</h5>
+      <p> Explore the wild in comfort and style. Our top-of-the-line SUVs are perfect for road trips, off-road adventures, or just getting around the city in luxury.</p>
+  </div>
+</section>
+<section class="container py-5">
+  <h2 class="text-center mb-5">Popular Cars</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://zoomcar-assets.zoomcar.com/987223/HostCarImage/RackMultipart20250324-20019-l4v2oh5cbd65c7-9450-49f6-89b5-dcd432b5a766.jpg" class="card-img-top" alt="Car 1">
+        <div class="card-body">
+          <p class="card-text">All-Wheel Drive for Off-Roading</p>
+          <a href="#" class="btn btn-success w-100">View Car</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://www.thecarguide.in/wp-content/uploads/2024/04/image-6.png" class="card-img-top" alt="Car 2">
+        <div class="card-body">
+          <p class="card-text">Spacious Boot Space for Luggage</p>
+          <a href="#" class="btn btn-success w-100">View Car</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://assets-eu-01.kc-usercontent.com/fb793c58-315a-0196-d3af-7c9c2613d52c/358f7010-0ab2-4706-bd26-e1c62c32bf4e/lexus-LBX-red-f34.jpg?w=1280&q=100&auto=format" class="card-img-top" alt="Car 3">
+        <div class="card-body">
+          <p class="card-text">Luxury Interior with Premium Seating</p>
+          <a href="#" class="btn btn-success w-100">View Car</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://www.team-bhp.com/sites/default/files/styles/amp_high_res/public/kia-sonet.jpg" class="card-img-top" alt="Car 4">
+        <div class="card-body">
+          <p class="card-text">Powerful Engine for Smooth Drives</p>
+          <a href="#" class="btn btn-success w-100">View Car</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://i.pinimg.com/736x/9c/a2/b7/9ca2b7e1c201669a344b0af8e6e3fe89.jpg" alt="Car 5">
+        <div class="card-body">
+          <p class="card-text">Fuel Efficiency for Long Journeys</p>
+          <a href="#" class="btn btn-success w-100">View Car</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdopvm07pZavemNrlu5jt5N3q_hznQ9T6bZRgQTJT6_CX9QRhj4Z1fnv8v2C8smatbtZU&usqp=CAU" alt="Car 6">
+        <div class="card-body">
+          <p class="card-text">Advanced Safety Features</p>
+          <a href="#" class="btn btn-success w-100">View Car</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="p-4 bg-white shadow mt-6 text-center text-gray-600">
+    <p>&copy; 2025 Explore SUV Rentals | All rights reserved</p>
+  </div>
+{% endblock %}

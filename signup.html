@@ -1,0 +1,99 @@
+{% extends 'main/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+   .page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 30px;
+   
+    }
+
+    h2 {
+        font-weight: 600;
+        color:#10182F;
+    }
+    
+    .shadow-wrap{
+        border-radius: 15px;
+        padding: 20px;
+        background-color: #10182F;
+        padding: 20px;
+         width: 100%;
+        max-width: 500px;
+    }
+    
+    .form-wrap{
+        background-color: #FFF ;
+        padding: 50px;
+    }
+    
+    .form-wrap form label{
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 26px; 
+    }
+
+    .form-wrap form input{
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: 1px solid #DAE1F5;
+        background: #FFF; 
+        color: #545D7A; 
+    }
+
+    .form-wrap button{
+        border-radius: 5px;
+        background: #10182F;
+        color: aliceblue;
+        cursor: pointer;
+        text-align: center;
+        font-size: 15px;
+        padding: 12px 65px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        margin-top: 30px;
+        line-height: 25px;
+    }
+
+    .signup-link{
+        color: #10182F;
+        font-size: 15px;
+        margin-top: 20px;
+        text-align: center;
+        line-height: 25px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .signup-link:hover{
+        text-decoration: underline;
+    }
+
+    .form-wrap button:hover{
+        background-color: #fff;
+        color: #10182F;
+        border-color: #10182F;
+    }
+
+</style>
+
+<div class="page-wrapper">
+    <div class="shadow-wrap">
+        <div class="form-wrap">
+            <h2 class="text-center mb-4">Create Your Account</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="d-grid mt-3">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

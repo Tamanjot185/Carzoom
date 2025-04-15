@@ -1,0 +1,159 @@
+{% extends 'main/main.html' %}
+{% block title %}Hyundai i20{% endblock %}
+{% block style %}
+<style>
+    .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .main-image {
+        margin-bottom: 20px;
+    }
+
+    .main-image img {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .car-name {
+        width: 80%;
+        margin: 20px auto 0 auto;
+        
+    }
+
+    .details-bg {
+    background-color: white;
+    padding: 40px 0;
+}
+
+.details {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card-wrap {
+    flex: 1 1 300px;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    background-color: #10182F;
+    
+}
+
+
+.card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+}
+
+    .btn-primary{
+        padding-left: 1.2rem;
+        padding-right:1.2rem;
+        background-color: black;
+        border: none;
+    }
+    .list-disc {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .details {
+            flex-direction: column;
+        }
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="main-image">
+        <img src="https://imgd.aeplcdn.com/640X480/vimages/202410/3650729_41678_1_1728713054659.jpg?q=80" alt="Front View">
+    </div>
+
+    <div class="gallery">
+        <img src="https://www.team-bhp.com/sites/default/files/pictures2022/2_17.jpg" alt="Side View">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Hyundai_i20_%28BC3%29_IMG_4165.jpg/640px-Hyundai_i20_%28BC3%29_IMG_4165.jpg" alt="Rear View">
+        <img src="https://www.financialexpress.com/wp-content/uploads/2021/08/Hyundai-i20_N_Line-2021-.jpeg?w=350" alt="Interior">
+        <img src="https://apollo.olx.in/v1/files/eb7ztqk65y3c3-IN/image" alt="Another View">
+    </div>
+</div>
+
+<div class="car-name">
+    <div class="text-sm text-gray-500">Hosted by RAVI KUMAR</div>
+    <h2 class="text-2xl font-bold">Hyundai i20 Sportz 2022</h2>
+    <div class="text-gray-600">Manual • Petrol • 5 Seats</div>
+    <div class="flex items-center text-green-600 text-lg font-semibold mt-2">
+        ★ 4.62 <span class="text-gray-500 text-sm ml-2">(18 Reviews)</span>  
+    </div>
+    <br>
+    <a href="{% url 'book_car' 2 %}" class="btn btn-primary">Book Now</a>
+</div>
+
+
+<div class="details-bg">
+    <div class="details">
+      <!-- Pricing Card -->
+      <div class="card-wrap">
+        <div class="card">
+          <div class="text-sm text-gray-600">
+            Trip Protection Fee <span class="text-blue-500 cursor-pointer">Change</span>
+          </div>
+          <div class="text-right font-semibold">₹400/hr</div>
+          <br>
+          <div class="flex justify-between text-lg font-bold">
+            <span>Total Price</span>
+            <span>₹3,950/day</span>
+          </div>
+          <div class="text-sm text-gray-500 mt-1">Inclusive of taxes</div>
+        </div>
+      </div>
+
+       
+  
+      <!-- Features Card -->
+      <div class="card-wrap">
+        <div class="card">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Features</h3>
+          <ul class="list-disc text-gray-600 space-y-1">
+            <li>Apple CarPlay & Android Auto</li>
+            <li>Touchscreen Infotainment System</li>
+            <li>Rear Parking Sensors</li>
+            <li>Automatic Climate Control</li>
+            <li>Leather Upholstery</li>
+            <li>LED Headlamps</li>
+            <li>Electric ORVMs</li>
+            <li>Keyless Entry</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,244 @@
+{% extends 'main/main.html' %}
+{% block title %}CarZoom - Rent Your Ride{% endblock %}
+
+{% block style %}
+<style>
+    .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+                    url('https://images.unsplash.com/photo-1605558967238-8a6611d229d4?auto=format&fit=crop&w=1650&q=80') center center/cover no-repeat;
+        color: white;
+        padding: 70px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .hero-section p {
+        font-size: 1.25rem;
+        margin-top: 15px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+    .card-title {
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    .btn-success {
+        background-color: black;
+        border: none;
+    }
+
+    .btn-success:hover {
+        background-color: black;
+    }
+
+    .car-category-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 4px 12px white;
+    transition: transform 0.3s ease;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding: 25px 20px;
+    justify-content:space-between;
+}
+
+
+
+.btn-primary{
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    border:none;
+}
+
+.btn-primary:hover{
+    background-color: black;
+}
+
+
+.car-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.car-category-card h5 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.car-category-card p {
+    font-size: 0.95rem;
+    color: black;
+    flex-grow: 1;
+}
+.view-btn{
+    width: 100vh;
+    background-color: black;
+    border: none;
+    padding:10px;
+    color:white;
+    border-radius:5px;
+    text-decoration:none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.view-btn:hover{
+    background-color: black;
+}
+
+    footer {
+        background-color: #10182F;
+        padding: 20px 0;
+        text-align: center;
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 60px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1>Rent Self-Drive Cars Anytime</h1>
+        <p>Affordable, flexible and reliable car rentals across your city.</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Book Now</a>
+    </div>
+</section>
+
+<!-- Featured Cars -->
+<section class="container py-5">
+    <h2 class="text-center mb-5">Popular Cars</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://i.pinimg.com/736x/99/b5/22/99b522620b48ea584233ee65096ccc5a.jpg" class="card-img-top" alt="Car 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai i20</h5>
+                        <p class="card-text">From ₹400/hr · Manual · Petrol</p>
+                        <a href="{% url 'car_details' %}" class="btn btn-success w-100">View Car</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/xuv_2.jpg" class="card-img-top" alt="Car 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mahindra XUV</h5>
+                        <p class="card-text">From ₹600/hr · Automatic · Diesel</p>
+                        <a href="#" class="btn btn-success w-100">View Car</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://i.pinimg.com/736x/90/53/10/905310e74bcdf58e61e2686e8c57dcbb.jpg" class="card-img-top" alt="Car 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Honda City</h5>
+                        <p class="card-text">From ₹500/hr · Automatic · Petrol</p>
+                        <a href="#" class="btn btn-success w-100">View Car</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://zoomcar-assets.zoomcar.com/918188/HostCarImage/mini_magick20250116-1-9m23sz3d048492-febb-4f50-8c54-1cce587a0a67.jpeg" class="card-img-top" alt="Car 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Mahindra Thar</h5>
+                        <p class="card-text">From ₹600/hr · Manual · Diesel</p>
+                        <a href="#" class="btn btn-success w-100">View Car</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://imgd.aeplcdn.com/642x361/n/cw/ec/184853/maruti-suzuki-swift-right-front-three-quarter5.jpeg?isig=0&q=75" alt="Car 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Maruti Suzuki Swift</h5>
+                        <p class="card-text">From ₹350/hr · Manual · Petrol</p>
+                        <a href="#" class="btn btn-success w-100">View Car</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://www.cartoq.com/wp-content/uploads/2023/05/kia-carens-premium-to-xline-1.jpg" alt="Car 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Kia Carens</h5>
+                        <p class="card-text">From ₹450/hr · Automatic · Petrol</p>
+                        <a href="#" class="btn btn-success w-100">View Car</a>
+                    </div>
+                </div>
+            </div>
+
+
+        
+        </div>
+
+</section>
+    <!-- Car Types -->
+    <section class="container py-5">
+        <h2 class="text-center mb-4">Browse by Car Type</h2>
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+        
+            <div class="car-category-card text-center p-4">
+                <h5>SUVs</h5>
+                <p>Rugged and spacious, SUVs are ideal for off-road adventures and family road trips. Rent the best-in-class SUVs in your city now.</p>
+                <a href="{% url 'suv' %}" class="view-btn">Rent SUVs</a>
+            </div>
+        
+            <div class="car-category-card text-center p-4">
+                <h5>Sedans</h5>
+                <p>Your best car rental-like options, perfect for road trips with your family or group outings with ample space and comfort for 6-7 passengers.</p>
+                <a href="#" class="view-btn">Rent Sedans</a>
+            </div>
+
+            <div class="car-category-card text-center p-4">
+                <h5>Electric Cars</h5>
+                <p>Go green with electric vehicles and experience the latest in eco-friendly technology while saving on fuel costs. Perfect for city commutes and short getaways.</p>
+                <a href="#" class="view-btn">Rent EVS</a>
+            </div>
+
+        
+            <div class="car-category-card text-center p-4">
+                <h5>Hatchbacks</h5>
+                <p>Spacious, convenient, and economical, Zoomcar hatchbacks are great for zipping around the city. They’re easy to park, fuel-efficient, and perfect for even offroading!</p>
+                <a href="#" class="view-btn">Rent Hatchbacks</a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 CarZoom. All rights reserved.</p>
+</footer>
+
+{% endblock %}

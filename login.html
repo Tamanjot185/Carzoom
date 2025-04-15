@@ -1,0 +1,99 @@
+{% extends 'main/main.html' %}
+{% block content %}
+<div class="page-wrapper">
+    <div class="shadow-wrap">
+        <h2 class="text-center mb-4 text-white">Login</h2>
+        <div class="form-wrap" style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; max-width: 400px; margin: auto;">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username" class="form-control my-2" placeholder="Username">
+                <input type="password" name="password" class="form-control my-2" placeholder="Password">
+                <button type="submit" class="btn btn-success w-100 mt-2">Login</button>
+                <a href="{% url 'signup' %}" class="btn btn-outline-secondary w-100 mt-2">Don't have an account? Sign Up</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    
+    .page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding-top: 30px;
+   
+    }
+
+    h2 {
+        font-weight: 600;
+        color:#10182F;
+    }
+
+
+    
+    .shadow-wrap{
+        border-radius: 5px;
+        padding: 25px;
+        background-color: #10182F;
+    }
+    
+    .form-wrap{
+        background-color: #FFF ;
+        padding: 70px;
+    }
+    
+    .form-wrap form label{
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 26px; 
+    }
+
+    .form-wrap form input{
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: 1px solid #DAE1F5;
+        background: #FFF; 
+        color: #545D7A; 
+    }
+
+    .form-wrap button{
+
+        
+        border-radius: 5px;
+        background: #10182F;
+        color: aliceblue;
+        cursor: pointer;
+        text-align: center;
+        font-size: 15px;
+        padding: 12px 65px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        margin-top: 30px;
+        line-height: 25px;
+    }
+
+    .signup-link{
+        color: #10182F;
+        font-size: 15px;
+        margin-top: 20px;
+        text-align: center;
+        line-height: 25px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .signup-link:hover{
+        text-decoration: underline;
+    }
+
+    .form-wrap button:hover{
+        background-color: #fff;
+        color: #10182F;
+        border-color: #10182F;
+    }
+
+</style>
+{% endblock %}
